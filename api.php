@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_GET['Bank']) && isset($_GET['Acc'])) {
     //檢查銀行代碼
     $BankCode = substr($_GET['Bank'], 0, 3);
