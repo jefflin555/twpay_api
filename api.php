@@ -6,8 +6,8 @@ if (isset($_GET['Bank']) && isset($_GET['Acc'])) {
     if (!is_nan($BankCode) && $BankCode >= 1 && strlen($BankCode)==3) {
 
         //檢查帳號
-        $AccNo = str_pad(substr($_GET['Acc'], 0, 16), 16, "0", STR_PAD_LEFT);
-        if (!is_nan($AccNo) && $AccNo >= 1) {
+        $AccNo = str_pad($_GET['Acc'], 16, "0", STR_PAD_LEFT);
+        if (!is_nan($AccNo) && $AccNo >= 1 && $AccNo <= 9999999999999999) {
             
             //產生QRCode編碼字串
             $QString = "TWQRP%3A%2F%2F".$BankCode."NTTransfer%2F158%2F02%2FV1%3FD6%3D".$AccNo."%26D5%3D".$BankCode."%26D10%3D901";
@@ -49,17 +49,14 @@ if (isset($_GET['Bank']) && isset($_GET['Acc'])) {
                 echo 'https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl='.$QString;
                 echo '"}';
             }
-            
         } else {
             //回傳帳號不合法訊息
             echo '{"Success":"0", "Msg":"Parameters `Acc` not legal"}';
-        }
-        
+        }       
     } else {
         //回傳銀行代碼不合法訊息
         echo '{"Success":"0", "Msg":"Parameters `Bank` not legal"}';
     }
-
 } else {
     //銀行代碼或帳號值為空，回傳錯誤訊息
     echo '{"Success":"0", "Msg":"Parameters `Bank` or `Acc` not set"}';
