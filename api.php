@@ -44,8 +44,8 @@ if (isset($_GET['Bank']) && isset($_GET['Acc'])) {
             //資料檢核完成，回傳JSON String
                 echo '{"Success":"1", "String":"';
                 echo urldecode($QString);
-                echo '", "QR":"';
-                echo 'https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl='.$QString;
+                echo '", "QR":"https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl=';
+                echo $QString;
                 echo '"}';
             }
         } else {
