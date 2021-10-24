@@ -1,5 +1,8 @@
-# twpay
-台灣Pay產生器API<BR>
+# 台灣Pay產生器API
+
+2021/10/24更新：感謝kevin823lin提供js版本～
+-----
+
 API 呼叫網址： https://i-tw.org/twpay/api<BR>
 資料傳送方式： GET<BR>
 資料反送方式： JSON String
