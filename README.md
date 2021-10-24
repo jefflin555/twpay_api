@@ -1,7 +1,8 @@
 # 台灣Pay產生器API
 
 2021/10/24更新：感謝kevin823lin提供js版本～
------
+-
+<small>註：「PHP」與「JS+HTML」版本互相獨立，可擇一版本使用即可，無需同時下載所有檔案。</small>
 
 API 呼叫網址： https://i-tw.org/twpay/api<BR>
 資料傳送方式： GET<BR>
