@@ -25,7 +25,7 @@ if (isset($_GET['Bank']) && isset($_GET['Acc'])) {
             //檢查備註
             if (isset($_GET['Memo'])) {
                 //備註上限為19字元，超過者省略。
-                $Memo = substr($_GET['Memo'], 0, 19);
+                $Memo = mb_substr($_GET['Memo'], 0, 19);
                 //於編碼字串上加上備註
                 $QString .= "%26D9%3D".$Memo;
             }
