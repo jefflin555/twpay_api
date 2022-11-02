@@ -9,7 +9,7 @@ if (isset($_GET['Bank']) && isset($_GET['Acc'])) {
         if (!is_nan($AccNo) && $AccNo >= 1 && strlen($AccNo) == 16) {
             
             //產生QRCode編碼字串
-            $QString = "TWQRP%3A%2F%2F".$BankCode."NTTransfer%2F158%2F02%2FV1%3FD6%3D".$AccNo."%26D5%3D".$BankCode."%26D10%3D901%26D97%3D99991231235959";
+            $QString = "TWQRP%3A%2F%2F".$BankCode."NTTransfer%2F158%2F02%2FV1%3FD6%3D".$AccNo."%26D5%3D".$BankCode."%26D10%3D901";
             
             //檢查金額
             if (isset($_GET['Amount'])) {
